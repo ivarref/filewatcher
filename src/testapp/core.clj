@@ -42,7 +42,7 @@
          file-changed (and (not= old-file new-file) (not-empty new-file))]
      (when file-changed
        (exec-cmds args (first new-file)))
-     (java.lang.Thread/sleep 60)
+     (Thread/sleep 60)
      (recur args (if file-changed (most-recently-changed-file) new-file)))))
 
 (defn -main

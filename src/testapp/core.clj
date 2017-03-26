@@ -50,4 +50,7 @@
   (println "working directory is" (.getAbsolutePath (io/file ".")))
   (println "most recent file is" (most-recently-changed-file))
   (println "starting to watch files ...")
+  (when (empty? args)
+    (println "Please specify command to execute...!")
+    (System/exit 1))
   (watch-files (vec args)))
